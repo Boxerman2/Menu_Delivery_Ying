@@ -15,15 +15,13 @@
             margin: 0;
             padding: 0;
             font-family: 'Poppins', sans-serif;
-            /* Fondo con sushi */
             background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
                         url('https://images.unsplash.com/photo-1553621042-f6e147245754?q=80&w=1500&auto=format&fit=crop');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
             
-            /* CONFIGURACIÓN PARA PERMITIR REFRESCO EN MÓVIL */
-            min-height: 101vh; 
+            min-height: 100vh; 
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -36,13 +34,12 @@
         .logo-container {
             text-align: center;
             padding-top: 50px;
-            margin-bottom: 30px;
             width: 90%;
         }
 
         .logo {
             width: 100%;
-            max-width: 300px;
+            max-width: 280px;
             height: auto;
             filter: drop-shadow(0 0 15px rgba(255,255,255,0.2));
         }
@@ -50,20 +47,20 @@
         .tagline {
             font-weight: 300;
             letter-spacing: 3px;
-            margin-top: 15px;
+            margin-top: 10px;
             text-transform: uppercase;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             opacity: 0.8;
-            text-align: center;
         }
 
+        /* CONTENEDOR CENTRADO */
         .btn-container {
             width: 100%;
             display: flex;
             flex-direction: column;
             align-items: center;
             gap: 18px;
-            margin-bottom: 50px;
+            margin: auto 0; /* Esto empuja los botones al centro real */
         }
 
         /* CLASE BASE DE LOS BOTONES */
@@ -75,37 +72,47 @@
             border-radius: 50px;
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
-            color: white;
+            color: white !important;
             text-align: center;
             text-decoration: none;
             font-weight: 600;
             font-size: 1rem;
-            transition: all 0.3s ease;
-            box-sizing: border-box; /* Para que el padding no rompa el ancho */
-            .btn {
-    /* ... tus otros estilos ... */
-    -webkit-tap-highlight-color: transparent; /* Esto elimina el recuadro azul */
-}
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
         }
 
+        /* EFECTO HOVER (AL PASAR EL MOUSE) */
+        .btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            border-color: rgba(255, 255, 255, 0.5);
+        }
 
-        /* CLASE PARA EL BOTÓN RESALTADO (CON GUION) */
+        /* BOTÓN RESALTADO */
         .btn-highlight {
             background: linear-gradient(135deg, var(--rojo-ying), var(--oscuro-rojo)) !important;
             border: none !important;
             box-shadow: 0 4px 15px rgba(230, 57, 70, 0.4);
         }
 
+        .btn-highlight:hover {
+            box-shadow: 0 8px 25px rgba(230, 57, 70, 0.6);
+            filter: brightness(1.1);
+        }
+
+        /* EFECTO AL PRESIONAR (MÓVIL Y PC) */
         .btn:active {
-            transform: scale(0.96);
+            transform: scale(0.95);
         }
 
         .footer {
-            margin-top: auto;
             padding: 25px 0;
             font-size: 0.7rem;
-            opacity: 0.5;
+            opacity: 0.6;
             text-align: center;
+            width: 100%;
         }
     </style>
 </head>
@@ -118,7 +125,7 @@
 
     <div class="btn-container">
         <a href="https://buffetsushi.es/" target="_blank" class="btn">🌐 Nuestra Web</a>
-        
+
         <a href="#" class="btn">⭐ Danos tu opinión</a>
 
         <a href="delivery.html" class="btn btn-highlight">🍱 Menú para llevar</a>
