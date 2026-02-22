@@ -1,11 +1,3 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Restaurante Ying - Experiencia Digital</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Great+Vibes&display=swap" rel="stylesheet">
-    <style>
         :root {
             --rojo-ying: #e63946;
             --dorado: #d4af37;
@@ -37,7 +29,7 @@
 
         /* Si tienes el logo en archivo, cambia el src */
         .logo {
-            width: 400px;
+            width: 120px;
             height: auto;
             filter: drop-shadow(0 0 10px rgba(255,255,255,0.3));
         }
@@ -109,24 +101,3 @@
             font-size: 0.7rem;
             opacity: 0.6;
         }
-    </style>
-</head>
-<body>
-
-    <div class="logo-container">
-        <img src="/cropped-logo-restauranteYing-2-220x43-1.png" alt="Logo Ying" class="logo">
-        <p>Explora tu experiencia</p>
-    </div>
-
-    <div class="btn-container">
-        <a href="https://buffetsushi.es/" class="btn">🌐 Nuestra Web</a>
-        <a href="#" class="btn">⭐ Danos tu opinión</a>
-        <a href="https://boxerman2.github.io/Menu_Delivery_Ying/" class="btn btn-highlight">🍱 Menú para llevar</a>
-    </div>
-
-    <div class="footer">
-        &copy; 2026 Restaurante Ying | Hecho con ❤️
-    </div>
-
-</body>
-</html>

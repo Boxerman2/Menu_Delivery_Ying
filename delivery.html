@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ying Alicante | Menú Express</title>
+    <style>
+        :root {
+            --rojo-ying: #b32d2e;
+            --negro: #1a1a1a;
+            --gris-fondo: #f5f5f5;
+        }
+
+        /* ANIMACIÓN DEFINIDA */
+        @keyframes aparecer {
+            0% { opacity: 0; transform: translateY(30px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: var(--gris-fondo);
+            margin: 0; padding: 0;
+            overflow-x: hidden;
+        }
+
+        header {
+            background-color: var(--negro);
+            color: white;
+            padding: 15px;
+            text-align: center;
+            position: sticky;
+            top: 0; z-index: 1000;
+            border-bottom: 3px solid var(--rojo-ying);
+        }
+
+        .header-title { margin: 0; font-size: 1.3rem; letter-spacing: 2px; }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 12px; padding: 15px;
+            max-width: 900px; margin: 0 auto;
+        }
+
+        @media (min-width: 768px) {
+            .grid-container { grid-template-columns: 1fr 1fr; }
+        }
+
+        /* TARJETA CON ANIMACIÓN ACTIVADA */
+        .card {
+            background: white;
+            border-radius: 12px;
+            display: flex;
+            height: 130px; 
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border: 1px solid #eee;
+            /* Aquí se aplica la animación */
+            animation: aparecer 0.8s ease-out forwards;
+            opacity: 0; 
+        }
+
+        /* Delays para que aparezcan uno por uno */
+        .card:nth-child(1) { animation-delay: 0.1s; }
+        .card:nth-child(2) { animation-delay: 0.2s; }
+        .card:nth-child(3) { animation-delay: 0.3s; }
+        .card:nth-child(4) { animation-delay: 0.4s; }
+        .card:nth-child(5) { animation-delay: 0.5s; }
+        .card:nth-child(6) { animation-delay: 0.6s; }
+
+        .card-img { width: 110px; height: 100%; object-fit: cover; }
+
+        .card-content {
+            padding: 10px 12px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card-title { font-size: 0.95rem; font-weight: bold; margin: 0; color: var(--negro); }
+
+        .price { font-weight: 800; color: var(--rojo-ying); font-size: 1.1rem; }
+
+        .btn-call {
+            background-color: var(--rojo-ying);
+            color: white;
+            text-decoration: none;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        .btn-wsp {
+            position: fixed; bottom: 20px; right: 20px;
+            background-color: #25d366;
+            color: white; width: 55px; height: 55px;
+            border-radius: 50%;
+            display: flex; justify-content: center; align-items: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            text-decoration: none; font-size: 25px; z-index: 1001;
+        }
+
+        footer { text-align: center; padding: 20px; font-size: 0.7rem; color: #999; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1 class="header-title">🥢 YING ALICANTE</h1>
+    </header>
+
+    <div class="grid-container">
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1579871494447-9811cf80d66c?w=400" class="card-img">
+            <div class="card-content">
+                <h2 class="card-title">Combo Especial 1</h2>
+                <p style="font-size: 0.75rem; color: #666; margin: 4px 0;">32 piezas variadas.</p>
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <span class="price">15.90€</span>
+                    <a href="tel:+34966354958" class="btn-call">PEDIR</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1553621042-f6e147245754?w=400" class="card-img">
+            <div class="card-content">
+                <h2 class="card-title">Barco Sushi 24p</h2>
+                <p style="font-size: 0.75rem; color: #666; margin: 4px 0;">Premium Sashimi & Rolls.</p>
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <span class="price">22.50€</span>
+                    <a href="tel:+34966354958" class="btn-call">PEDIR</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1583623025817-d180a2221d0a?w=400" class="card-img">
+            <div class="card-content">
+                <h2 class="card-title">Menú Salmón</h2>
+                <p style="font-size: 0.75rem; color: #666; margin: 4px 0;">Sashimi y Nigiris frescos.</p>
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <span class="price">14.90€</span>
+                    <a href="tel:+34966354958" class="btn-call">PEDIR</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1611143669185-af224c5e3252?w=400" class="card-img">
+            <div class="card-content">
+                <h2 class="card-title">Combo Veggie</h2>
+                <p style="font-size: 0.75rem; color: #666; margin: 4px 0;">16 piezas vegetales.</p>
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <span class="price">11.00€</span>
+                    <a href="tel:+34966354958" class="btn-call">PEDIR</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1559466273-d95e72debaf8?w=400" class="card-img">
+            <div class="card-content">
+                <h2 class="card-title">Pack Crunch</h2>
+                <p style="font-size: 0.75rem; color: #666; margin: 4px 0;">Rolls tempurizados.</p>
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <span class="price">16.50€</span>
+                    <a href="tel:+34966354958" class="btn-call">PEDIR</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1579584425555-c3ce17fd4351?w=400" class="card-img">
+            <div class="card-content">
+                <h2 class="card-title">Super Barco 60p</h2>
+                <p style="font-size: 0.75rem; color: #666; margin: 4px 0;">El festín familiar.</p>
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <span class="price">49.90€</span>
+                    <a href="tel:+34966354958" class="btn-call">PEDIR</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <a href="https://wa.me/34966354958" class="btn-wsp" target="_blank">
+        <span>💬</span>
+    </a>
+
+    <footer>
+        Ying Alicante Delivery Express • Hecho con 🥢
+    </footer>
+
+</body>
+</html>
