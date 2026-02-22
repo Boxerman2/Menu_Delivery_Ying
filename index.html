@@ -33,7 +33,7 @@
 
         .logo-container {
             text-align: center;
-            padding-top: 50px;
+            padding-top: 40px; /* Un poco menos de espacio arriba */
             width: 90%;
         }
 
@@ -51,19 +51,20 @@
             text-transform: uppercase;
             font-size: 0.8rem;
             opacity: 0.8;
+            text-align: center;
         }
 
-        /* CONTENEDOR CENTRADO */
+        /* CONTENEDOR AJUSTADO HACIA ARRIBA */
         .btn-container {
             width: 100%;
             display: flex;
             flex-direction: column;
             align-items: center;
             gap: 18px;
-            margin: auto 0; /* Esto empuja los botones al centro real */
+            margin-top: 30px; /* Empuja los botones cerca del logo */
+            margin-bottom: 20px;
         }
 
-        /* CLASE BASE DE LOS BOTONES */
         .btn {
             width: 85%;
             max-width: 320px;
@@ -82,7 +83,6 @@
             -webkit-tap-highlight-color: transparent;
         }
 
-        /* EFECTO HOVER (AL PASAR EL MOUSE) */
         .btn:hover {
             background: rgba(255, 255, 255, 0.2);
             transform: translateY(-3px);
@@ -90,7 +90,6 @@
             border-color: rgba(255, 255, 255, 0.5);
         }
 
-        /* BOTÓN RESALTADO */
         .btn-highlight {
             background: linear-gradient(135deg, var(--rojo-ying), var(--oscuro-rojo)) !important;
             border: none !important;
@@ -102,17 +101,18 @@
             filter: brightness(1.1);
         }
 
-        /* EFECTO AL PRESIONAR (MÓVIL Y PC) */
         .btn:active {
             transform: scale(0.95);
         }
 
+        /* FOOTER SUBIDO */
         .footer {
-            padding: 25px 0;
+            padding: 15px 0; /* Menos espacio para que suba */
             font-size: 0.7rem;
             opacity: 0.6;
             text-align: center;
             width: 100%;
+            margin-top: 10px; /* Menos separación con los botones */
         }
     </style>
 </head>
@@ -125,9 +125,7 @@
 
     <div class="btn-container">
         <a href="https://buffetsushi.es/" target="_blank" class="btn">🌐 Nuestra Web</a>
-
         <a href="#" class="btn">⭐ Danos tu opinión</a>
-
         <a href="delivery.html" class="btn btn-highlight">🍱 Menú para llevar</a>
     </div>
 
