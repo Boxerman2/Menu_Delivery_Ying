@@ -11,9 +11,8 @@
             --gris-fondo: #f5f5f5;
         }
 
-        /* ANIMACIÓN DEFINIDA */
         @keyframes aparecer {
-            0% { opacity: 0; transform: translateY(30px); }
+            0% { opacity: 0; transform: translateY(20px); }
             100% { opacity: 1; transform: translateY(0); }
         }
 
@@ -22,6 +21,7 @@
             background-color: var(--gris-fondo);
             margin: 0; padding: 0;
             overflow-x: hidden;
+            -webkit-tap-highlight-color: transparent;
         }
 
         header {
@@ -39,7 +39,7 @@
         .grid-container {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 12px; padding: 15px;
+            gap: 15px; padding: 15px;
             max-width: 900px; margin: 0 auto;
         }
 
@@ -47,21 +47,19 @@
             .grid-container { grid-template-columns: 1fr 1fr; }
         }
 
-        /* TARJETA CON ANIMACIÓN ACTIVADA */
         .card {
             background: white;
             border-radius: 12px;
             display: flex;
-            height: 130px; 
+            height: 140px; /* Un poco más alta que antes */
             overflow: hidden;
             box-shadow: 0 2px 8px rgba(0,0,0,0.1);
             border: 1px solid #eee;
-            /* Aquí se aplica la animación */
-            animation: aparecer 0.8s ease-out forwards;
+            animation: aparecer 0.6s ease-out forwards;
             opacity: 0; 
         }
 
-        /* Delays para que aparezcan uno por uno */
+        /* Delays para efecto cascada */
         .card:nth-child(1) { animation-delay: 0.1s; }
         .card:nth-child(2) { animation-delay: 0.2s; }
         .card:nth-child(3) { animation-delay: 0.3s; }
@@ -69,17 +67,23 @@
         .card:nth-child(5) { animation-delay: 0.5s; }
         .card:nth-child(6) { animation-delay: 0.6s; }
 
-        .card-img { width: 110px; height: 100%; object-fit: cover; }
+        /* IMAGEN MÁS AMPLIA (140px en lugar de 110px) */
+        .card-img { 
+            width: 145px; 
+            height: 100%; 
+            object-fit: cover; 
+            flex-shrink: 0; /* Evita que la imagen se achique */
+        }
 
         .card-content {
-            padding: 10px 12px;
+            padding: 12px;
             flex: 1;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
         }
 
-        .card-title { font-size: 0.95rem; font-weight: bold; margin: 0; color: var(--negro); }
+        .card-title { font-size: 1rem; font-weight: bold; margin: 0; color: var(--negro); }
 
         .price { font-weight: 800; color: var(--rojo-ying); font-size: 1.1rem; }
 
@@ -87,10 +91,11 @@
             background-color: var(--rojo-ying);
             color: white;
             text-decoration: none;
-            padding: 6px 12px;
+            padding: 8px 15px;
             border-radius: 6px;
             font-size: 0.8rem;
             font-weight: bold;
+            text-align: center;
         }
 
         .btn-wsp {
@@ -103,7 +108,7 @@
             text-decoration: none; font-size: 25px; z-index: 1001;
         }
 
-        footer { text-align: center; padding: 20px; font-size: 0.7rem; color: #999; }
+        footer { text-align: center; padding: 30px; font-size: 0.75rem; color: #999; }
     </style>
 </head>
 <body>
@@ -114,10 +119,10 @@
 
     <div class="grid-container">
         <div class="card">
-            <img src="/img/a.png" class="card-img">
+            <img src="img/a.png" class="card-img" alt="Combo Especial 1">
             <div class="card-content">
                 <h2 class="card-title">Combo Especial 1</h2>
-                <p style="font-size: 0.75rem; color: #666; margin: 4px 0;">32 piezas variadas.</p>
+                <p style="font-size: 0.75rem; color: #666; margin: 4px 0;">32 piezas variadas. ejemplo. ejemplo. ejemplo. ejemplo. ejemplo.</p>
                 <div style="display: flex; justify-content: space-between; align-items: center;">
                     <span class="price">15.90€</span>
                     <a href="tel:+34966354958" class="btn-call">PEDIR</a>
@@ -126,7 +131,7 @@
         </div>
 
         <div class="card">
-            <img src="/img/b.png" class="card-img">
+            <img src="img/b.png" class="card-img" alt="Barco Sushi 24p">
             <div class="card-content">
                 <h2 class="card-title">Barco Sushi 24p</h2>
                 <p style="font-size: 0.75rem; color: #666; margin: 4px 0;">Premium Sashimi & Rolls.</p>
@@ -138,7 +143,7 @@
         </div>
 
         <div class="card">
-            <img src="/img/c.png" class="card-img">
+            <img src="img/c.png" class="card-img" alt="Menú Salmón">
             <div class="card-content">
                 <h2 class="card-title">Menú Salmón</h2>
                 <p style="font-size: 0.75rem; color: #666; margin: 4px 0;">Sashimi y Nigiris frescos.</p>
@@ -150,7 +155,7 @@
         </div>
 
         <div class="card">
-            <img src="/img/d.png" class="card-img">
+            <img src="img/d.png" class="card-img" alt="Combo Veggie">
             <div class="card-content">
                 <h2 class="card-title">Combo Veggie</h2>
                 <p style="font-size: 0.75rem; color: #666; margin: 4px 0;">16 piezas vegetales.</p>
@@ -162,7 +167,7 @@
         </div>
 
         <div class="card">
-            <img src="/img/e.png" class="card-img">
+            <img src="img/e.png" class="card-img" alt="Pack Crunch">
             <div class="card-content">
                 <h2 class="card-title">Pack Crunch</h2>
                 <p style="font-size: 0.75rem; color: #666; margin: 4px 0;">Rolls tempurizados.</p>
@@ -174,7 +179,7 @@
         </div>
 
         <div class="card">
-            <img src="/img/f.png" class="card-img">
+            <img src="img/f.png" class="card-img" alt="Super Barco 60p">
             <div class="card-content">
                 <h2 class="card-title">Super Barco 60p</h2>
                 <p style="font-size: 0.75rem; color: #666; margin: 4px 0;">El festín familiar.</p>
@@ -184,7 +189,6 @@
                 </div>
             </div>
         </div>
-
     </div>
 
     <a href="https://wa.me/34966354958" class="btn-wsp" target="_blank">
